@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71156606-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-71156606-1');
+  </script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>MuseNet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../../assets/styles/all15fb.css?v=e11caac7c6" />
+  
+  <script type="text/javascript">document.documentElement.className = 'js';</script>
+  <link rel="icon" type="image/svg+xml" href="https://openai.com/assets/images/favicon.svg?v=e11caac7c6">
+  <link rel="mask-icon" href="https://openai.com/assets/images/mask-icon.svg?v=e11caac7c6" color="#000000">
+  <meta name="description" content="我们创建了Musenet，这是一个深度神经网络，可以用10种不同的乐器生成4分钟的音乐作品，可以结合从乡村到莫扎特到披头士的风格。" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "OpenAI",
+        "url": "https://openai.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://openai.com/content/images/2021/08/openai-avatar.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Christine McLeavey Payne",
+        "url": "https://openai.com/blog/authors/christine/",
+        "sameAs": []
+    },
+    "headline": "MuseNet",
+    "url": "https://openai.com/blog/musenet/",
+    "datePublished": "2019-04-25T16:29:16.000Z",
+    "dateModified": "2021-06-21T21:56:58.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://openai.com/content/images/2019/04/2x-no-mark.jpg",
+        "width": 1276,
+        "height": 1696
+    },
+    "keywords": "Research, Milestones",
+    "description": "我们制作了MuseNet，这是一个深度神经网络，它可以用10种不同的乐器生成最多4分钟的音乐作品，并且可以结合从乡村到莫扎特到披头士的风格。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://openai.com/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.22" />
+    <link rel="alternate" type="application/rss+xml" title="OpenAI" href="https://openai.com/blog/rss/" />
+    <script defer src="../../../unpkg.com/%40tryghost/portal%401.12.7/umd/portal.min.js" data-ghost="https://openai.com/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <style>
+  h2#samples  {
+    margin-top: calc(var(--v) * 1);
+  }
+  .Dropdown-placeholder {
+    background-image: none !important; /* override */
+  }
+  #fa2 .disclaimer {
+    display: none;
+  }
+  /* hotfix for color name change */
+  .bg-dull-black-1 {
+    background-color: var(--light-black);
+  }
+</style><style>:root {--ghost-accent-color: #15171A;}</style>
+</head>
+<body>
+<article class="post" id="post-musenet">
+<header>
+<div class="container mt-3 mb-2 pb-1">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-9 col-sm-8 col-md-5 col-xl-4 order-md-1 mb-1.5 mb-md-1 position-relative">
+            <div class="sticky sticky-top mt-ngutter pt-gutter">
+              <figure class="release-cover mb-0 position-relative bg-fg-2 rounded-small overflow-hidden shadowed-xheavy" style="padding-bottom:132.915360502%">
+    <img
+      class="position-absolute trbl-0 js-lazy"
+      data-src="../../../cdn.openai.com/research-covers/musenet/2x-no-mark.jpg"
+      alt="MuseNet">
+</figure>
+
+            </div>
+          </div>
+
+          <div class="col-12 col-md">
+            <div class="h-100 w-md-11/12 w-xl-10/12 max-width-xnarrow">
+              <div class="h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <h1 class="
+   balance-text
+  
+  
+  
+  
+  
+  
+  
+   mb-0.75
+  ">MuseNet</h1>                      <div class="post-excerpt content no-col js-excerpt-container js-widow">
+  </div>
+                  </div>
+                    <div class="post-header-date small-copy color-fg-50 color-fg mb-1 mb-md-10/12">
+  </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</header>
+
+  <section class="container">
+  <div class="row">
+    <section class="content">
+      
+      <!--kg-card-begin: markdown--><div class="js-excerpt">
+<p>我们制作了MuseNet，这是一个深度神经网络，它可以用10种不同的乐器生成最多4分钟的音乐作品，并且可以糅合乡村到莫扎特到披头士的风格。MuseNet并没有明确地用我们对音乐的理解来制作，而是通过学习预测数十万MIDI文件中的下一个标记来发现和声、节奏和风格的模式。MuseNet使用的通用无监督技术与 <a href="https://openai.com/blog/better-language-models/">GPT-2</a>, 一种大规模的 <a href="https://arxiv.org/abs/1706.03762">变压</a> 训练模型预测序列中的下一个标记，无论是音频还是文本。</p>
+<p>注：本网站仅为国内汉化，<a href="https://openai.com/blog/musenet/">原网址</a></p>
+<p><a href=https://github.com/jjcyf/Musenet-Chinese>* Github开源 *</a></p>
+</div>
+<h2 id="samples">实例</h2>
+<p>注：因实例为外网链接，这里的实例及描述已被修改</p>
+<p>由于MuseNet知道许多不同的风格，我们可以以及其新颖的方式将几代人的创意融合.下面的视频让东方Project的音乐经过不同时代人的风格加工，足足5分钟。</p>
+<section>
+<hr class="my-0.5">
+<!-- Prompted with "Pop" and first 12 tokens of Chopin Op. 27, No. 2 -->
+<iframe class="mb-0" src="http://player.bilibili.com/player.html?aid=75662669&bvid=BV1EJ411D72P&cid=129430942&page=1" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+<hr class="my-0.5">
+</section>
+<h2 id="try">尝试使用MuseNet</h2>
+<p>无论你是作曲家还是吃瓜群众我们都很高兴看到你使用MuseNet创作音乐!</p>
+<p>在 <em>普通模式</em> 里(此模式为默认模式), 您将听到我们预先生成的随机未分级样本。选择一个作曲家或风格，一个著名作品的可选开头，然后开始生成。这使您可以探索模型可以创建的各种音乐风格。在高级模式下，您可以直接与模型交互。完成将需要更长的时间，但您将创建一个全新的作品。</p>
+<div class="full mt-2.5 mb-1.5">
+<div id="demo"></div>
+</div>
+<p><a id="caveats"></a><br>
+MuseNet的一些限制:</p>
+<ul>
+<li>你所选择的乐器是给予AI的一种建议，而不是要求AI去这么做。MuseNet会通过计算所有可能的音符和乐器的概率来生成每个音符。所以模型会改变，这使您更容易选择乐器，因为AI总有可能选择其他乐器。</li>
+<li>MuseNet的风格和乐器（如肖邦的贝司和鼓）的奇数配对是极其困难的。如果你选择最接近你选择的作曲家或乐队风格的乐器，音乐或许会更加自然.</li>
+</ul>
+<p>我们可以将MuseNet中的嵌入可视化，以深入了解模型所学到的知识。这里我们使用<a href="https://lvdmaaten.github.io/tsne/">t-SNE</a>创建各种音乐作曲家和风格嵌入的余弦相似性的二维地图.</p>
+<div class="full pt-1 pt-md-1.5 pb-1 pb-lg-2 my-2.5 bg-cover" style="background-image: url(../../../cdn.openai.com/research-covers/musenet/gradient.jpg)">
+  <div class="container">
+    <div class="color-fg-50 small-copy" style="width: 40%">
+      将鼠标悬停在特定的作曲家或风格上，查看它与其他作曲家或风格的关系。
+    </div>
+    <div id="composer-embeddings-css"></div>
+    <div class="mx-auto" style="max-width:1080px">
+      <div id="composer-embeddings"></div>
+    </div>
+  </div>
+</div>
+<div class="caption">Musenet于2019年4月25日举行了一场实验音乐会，现场直播了<a href=“https://www.twitch.tv/openai“>OpenAI</a>，以前没有人（包括我们）听过这些片段。</div>
+<!-- playlist -->
+<!-- <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/758984046&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe> -->
+<footer class="post-footer js-post-footer">
+<div>
+<hr>
+<div class="row">
+<div class="col">感谢名单</div>
+<div class="col">
+<p>感谢Rewon Child和Scott Gray在变压器上的工作，以及Jeff Wu和Alec Radford在GPT-2上的工作。</p>
+<p>我们还感谢以下对本文章的反馈: Greg Brockman, Ilya Sutskever, Durk Kingma, Arvind Neelakantan, Tim Salimans, Rob Laidlow, Judith Finell, Moni Simeonov, Ray Iwazumi, Sam McCandlish, Miles Brundage, Jack Clark, Jonas Schneider, Chris Olah.</p>
+</div>
+</div>
+</div>
+<div>
+<hr>
+<div class="row">
+<div class="col">编者</div>
+<div class="col">Ashley Pilipiszyn</div>
+</div>
+</div>
+<div>
+<hr>
+<div class="row">
+<div class="col">设计与开发</div>
+<div class="col">Justin Jay Wang, Nicholas Benson, Eric Sigler</div>
+</div>
+</div>
+<div>
+<hr>
+<div class="row">
+<div class="col">封面</div>
+<div class="col">Ben Barry</div>
+</div>
+</div>
+<div data-order="-1">
+<hr>
+<div class="row">
+</ol>
+</section>
+<!--kg-card-end: markdown-->
+    </section>
+  </div>
+</section>
+  <footer class="post-footer post-footer--authors container js-post-footer-authors">
+  <div data-order="0">
+    <hr>
+    <div class="row" id="authors">
+      <div class="col">作者</div>
+      <div class="col js-post-footer-authors-list ">
+        <span class="post-author"><a class="fade" href="https://openai.com/blog/authors/christine/">Christine McLeavey Payne</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<footer class="post-footer post-footer--tags container js-post-footer-tags">
+  <div>
+    <hr>
+    <div class="row" id="tags">
+      <div class="col">软件发布</div>
+      <div class="col js-post-footer-tags-list">
+        <span class="post-tag"><a class="fade" href="https://openai.com/blog/tags/research/">Research</a></span><span class="post-tag"><a class="fade" href="https://openai.com/blog/tags/milestones/">Milestones</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</article>
+  <script type="text/javascript" src="../../assets/scripts/main15fb.js?v=e11caac7c6"></script>
+  
+  <script>
+  var rt = document.body.querySelector('.reading-time');
+  rt.innerHTML += ', 16 minute listen';
+</script>
+<script src="bundle.v7.js"></script>
+
+<script type="module">
+
+import {Runtime, Inspector, Library} from "https://unpkg.com/@observablehq/runtime@4.5.0/dist/runtime.js";
+import notebook from "https://cdn.openai.com/musenet/visualization/c8b2460ddacd0978%40401.js";
+// import notebook from "https://api.observablehq.com/d/c8b2460ddacd0978.js?v=3";
+
+const customWidth = function (selector) {
+  return (new Library).Generators.observe(function(change) {
+    var width = change(document.querySelector(selector).clientWidth);
+    function resized() {
+      var w = document.querySelector(selector).clientWidth;
+      if (w !== width) change(width = w);
+    }
+    window.addEventListener("resize", resized);
+    return function() {
+      window.removeEventListener("resize", resized);
+    };
+  });
+};
+
+new Runtime(Object.assign(new Library, {width: customWidth("#composer-embeddings")})).module(notebook, name => {
+  switch (name) {
+    case "inlinecss": return new Inspector(document.querySelector("#composer-embeddings-css"));
+    case "chart": return new Inspector(document.querySelector("#composer-embeddings"));
+  }
+});
+
+</script>
+</body>
+
+<!-- Mirrored from openai.com/blog/musenet/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Nov 2021 06:24:57 GMT -->
+</html>
